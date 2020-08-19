@@ -1,6 +1,5 @@
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.App {
+  font-size: 12px;
 }
 
 .App-header {
@@ -28,42 +27,110 @@
 }
 
 .user-actions {
-    padding: 10px;
-    border-left: 1px solid #d2c4c4;
+  padding: 10px;
+  border-left: 1px solid #d2c4c4;
 }
 
 .user-details {
-    border: 1px solid #d2c4c4;
-    width: 300px !important;
-    padding: 4px;
+  border: 1px solid #d2c4c4;
+  width: 250px !important;
+  padding: 4px;
 }
 
 .overview {
-    background-color: #0861c0;
-    color: #d8d8d8;
-    border-radius: 0px !important;
-    min-height: 90vh;
+  background-color: #0861c0;
+  color: #d8d8d8;
+  border-radius: 0px !important;
+  min-height: 90vh;
+  font-size: 15px;
 }
 .list-group-item {
-    background-color: unset !important;
-    border-color: #d8d8d8;
+  background-color: unset !important;
+  border-color: #d8d8d8;
 }
-.keydown{
-    background-color : #14090916;
-    color: #d8d8d8;
+.keydown {
+  background-color: #14090916;
+  color: #d8d8d8;
 }
-.reporting{
-    background-color: #033f80;
-    color: #d8d8d8;
-    font-size: 12px;
-}
-
-.fx-header{
-    background-color: #003064;
-    color: #d8d8d8;
-    font-size: 24px;
+.reporting {
+  background-color: #033f80;
+  color: #d8d8d8;
+  font-size: 10px;
 }
 
-.navbar {
-    border-bottom: 2px solid #00000038;
+.fx-header {
+  background-color: #003064;
+  color: #d8d8d8;
+  font-size: 20px;
+}
+
+.nav-1 {
+  border-bottom: 2px solid #00000038;
+}
+
+.sidebar-active {
+  background-color: #fff !important;
+  margin-right: 2px;
+  margin-right: -5px;
+  color: #007bff !important;
+}
+
+.beta {
+  background-color: green;
+  margin-left: 5px;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+.smallx{
+    font-size: 13px !important;
+}
+
+.nav-2 {
+  border-bottom: 1px solid #00000038;
+}
+
+.edit {
+  background-color: #ffccd3;
+}
+
+.revision {
+  background-color: #fbedce;
+}
+
+.p-approval {
+  background-color: #d1e4f9;
+}
+
+.p-implementation {
+  background-color: #fedfd0;
+}
+
+.stage {
+  border-right: 1px solid #d2c4c4;
+  min-width: 300px;
+  min-height: 90vh;
+}
+.requested {
+  background-color: #d8d8d8;
+}
+
+.project-columns {
+  overflow-x: auto;
+  min-height: 1100px;
+}
+@media (min-width: 544px) {
+  .project-columns-container {
+    overflow-x: visible !important;
+    min-height: 1100px;
+  }
+}
+
+@media (min-width: 544px) {
+  .project-column {
+    min-width: 355px;
+    max-width: 355px;
+    border-right: 1px solid #d2c4c4;
+  }
 }
