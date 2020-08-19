@@ -24,31 +24,31 @@ const Sidebar = () => {
           <li className="list-group-item">Overview</li>
           <li className="list-group-item d-flex justify-content-between">
             LeadManagerFx{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>
           <li className="list-group-item d-flex justify-content-between">
             CallTrackerFx{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>
           <li className="list-group-item d-flex justify-content-between">
             CompanyTrackerFx{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>
           <li className="list-group-item d-flex justify-content-between">
             CPLdashboardFx{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>
           <li className="list-group-item d-flex justify-content-between">
             ContentAnalyticsFx{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>
@@ -65,37 +65,37 @@ const Sidebar = () => {
         <ul className="list-group list-group-flush">
           <li className="list-group-item d-flex justify-content-between">
             CompetitorSpyFx{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>
           <li className="list-group-item d-flex justify-content-between">
             PredictionGeniusFx{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>
           <li className="list-group-item d-flex justify-content-between">
             LeadNurtureFx{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>
           <li className="list-group-item d-flex justify-content-between">
             ReviewBoostFx{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>
           <li className="list-group-item d-flex justify-content-between">
             PersonalizeFx{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>
           <li className="list-group-item d-flex justify-content-between">
             ClickBoostFx{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>
@@ -106,7 +106,7 @@ const Sidebar = () => {
             <div>
               LocalFx <span className="beta">Beta</span>
             </div>{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>
@@ -128,7 +128,7 @@ const Sidebar = () => {
             <div>
               DeepLearningFx <span className="beta">Beta</span>{" "}
             </div>{" "}
-            <span class="keydown">
+            <span className="keydown">
               <KeyboardDown />
             </span>
           </li>

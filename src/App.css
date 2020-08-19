@@ -134,3 +134,16 @@
     border-right: 1px solid #d2c4c4;
   }
 }
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.showModal {
+    cursor: pointer;
+}
+
+.card-icons{
+    font-size: 10px;
+}
