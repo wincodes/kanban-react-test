@@ -147,3 +147,7 @@ hr {
 .card-icons{
     font-size: 10px;
 }
+
+.total-task {
+    border-radius: 4px;
+}

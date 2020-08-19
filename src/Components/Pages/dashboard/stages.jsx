@@ -53,12 +53,12 @@ const Stages = () => {
           <div className="project-column position-relative d-flex flex-auto flex-column overflow-hidden pl-2 pt-2">
             <div className="p-2">
               <div className="pb-4">
-                <span className="requested pt-1 pb-1 pl-2 pr-2 number">
+                <span className="requested total-task pt-1 pb-1 pl-2 pr-2 number">
                   {requested.length}
                 </span>{" "}
                 Requested
               </div>
-              <div className="pt-2">
+              <div className="pt-2" >
                 {requested.map((task) => (
                   <MainCard
                     key={task.id}
@@ -74,7 +74,7 @@ const Stages = () => {
           <div className="project-column position-relative d-flex flex-auto flex-column overflow-hidden pl-2 pt-2">
             <div className="p-2">
               <div className="pb-4">
-                <span className="edit pt-1 pb-1 pl-2 pr-2">{edit.length}</span> Edits
+                <span className="edit total-task pt-1 pb-1 pl-2 pr-2">{edit.length}</span> Edits
                 Requested
               </div>
               <div className="pt-2">
@@ -93,7 +93,7 @@ const Stages = () => {
           <div className="project-column position-relative d-flex flex-auto flex-column overflow-hidden pl-2 pt-2">
             <div className="p-2">
               <div className="pb-4">
-                <span className="revision pt-1 pb-1 pl-2 pr-2">{revision.length}</span> In
+                <span className="revision total-task pt-1 pb-1 pl-2 pr-2">{revision.length}</span> In
                 Revision
               </div>
               <div className="pt-2">
@@ -112,7 +112,7 @@ const Stages = () => {
           <div className="project-column position-relative d-flex flex-auto flex-column overflow-hidden pl-2 pt-2">
             <div className="p-2">
               <div className="pb-4">
-                <span className="p-approval pt-1 pb-1 pl-2 pr-2">{pendingApproval.length}</span>{" "}
+                <span className="p-approval total-task pt-1 pb-1 pl-2 pr-2">{pendingApproval.length}</span>{" "}
                 Pending Approval
               </div>
               <div className="pt-2">
@@ -131,7 +131,7 @@ const Stages = () => {
           <div className="project-column position-relative d-flex flex-auto flex-column overflow-hidden pl-2 pt-2">
             <div className="p-2">
               <div className="pb-4">
-                <span className="p-implementation  pt-1 pb-1 pl-2 pr-2">{pendingImplementation.length}</span>{" "}
+                <span className="p-implementation total-task  pt-1 pb-1 pl-2 pr-2">{pendingImplementation.length}</span>{" "}
                 Peding Implementation
               </div>
               <div className="pt-2">
@@ -150,7 +150,7 @@ const Stages = () => {
           <div className="project-column position-relative d-flex flex-auto flex-column overflow-hidden pl-2 pt-2">
             <div className="p-2">
               <div className="pb-4">
-                <span className="bg-primary  pt-1 pb-1 pl-2 pr-2">{done.length}</span> Done
+                <span className="bg-primary total-task pt-1 pb-1 pl-2 pr-2">{done.length}</span> Done
               </div>
               <div className="pt-2">
                 {done.map((task) => (
