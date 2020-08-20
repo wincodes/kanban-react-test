@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from "react";
-import MainCard from "../cards/maincard";
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { DndProvider, useDrag, useDrop } from "react-dnd";
+// import MainCard from "../cards/maincard";
 import firebase from "../../../firebase";
+import Task from "./Task";
+import HTML5Backend from "react-dnd-html5-backend";
+import update from "immutability-helper";
 
 const getTasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -46,51 +50,29 @@ const Stages = () => {
   const done = tasks.filter((task) => {
     return task.status === "done";
   });
+
+  const changeTaskStatus = useCallback(
+    (id, status, targetStatus) => {
+        let task = tasks.find(task => task.id === id.id);
+        if(task !== undefined){
+            task.status = targetStatus
+            delete task.id
+            firebase.firestore().collection("tasks").doc(id.id).update(task);
+        }
+    },
+    [tasks]
+  );
+
   return (
+    <DndProvider backend={HTML5Backend}>
     <div className="project-columns d-flex flex-auto flex-column clearfix position-relative no-wrap ">
       <div className="project-columns-container d-flex flex-auto flex-row position-relative overflow-hidden">
         <div className="d-flex flex-auto flex-row width-full ">
-          <div className="project-column position-relative d-flex flex-auto flex-column overflow-hidden pl-2 pt-2">
-            <div className="p-2">
-              <div className="pb-4">
-                <span className="requested total-task pt-1 pb-1 pl-2 pr-2 number">
-                  {requested.length}
-                </span>{" "}
-                Requested
-              </div>
-              <div className="pt-2" >
-                {requested.map((task) => (
-                  <MainCard
-                    key={task.id}
-                    title={task.title}
-                    description={task.description}
-                    tag={task.tag}
-                    duedate={task.duedate}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="project-column position-relative d-flex flex-auto flex-column overflow-hidden pl-2 pt-2">
-            <div className="p-2">
-              <div className="pb-4">
-                <span className="edit total-task pt-1 pb-1 pl-2 pr-2">{edit.length}</span> Edits
-                Requested
-              </div>
-              <div className="pt-2">
-                {edit.map((task) => (
-                  <MainCard
-                    key={task.id}
-                    title={task.title}
-                    description={task.description}
-                    tag={task.tag}
-                    duedate={task.duedate}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="project-column position-relative d-flex flex-auto flex-column overflow-hidden pl-2 pt-2">
+          <Task data={requested} changeTaskStatus={changeTaskStatus} targetStatus="requested" name="Requested" />
+          <Task data={edit} changeTaskStatus={changeTaskStatus} targetStatus="edit" name="Edits Requested" />
+          <Task data={revision} changeTaskStatus={changeTaskStatus} targetStatus="revision" name="Revision" />
+
+          {/* <div className="project-column position-relative d-flex flex-auto flex-column overflow-hidden pl-2 pt-2">
             <div className="p-2">
               <div className="pb-4">
                 <span className="revision total-task pt-1 pb-1 pl-2 pr-2">{revision.length}</span> In
@@ -164,10 +146,11 @@ const Stages = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
+    </DndProvider>
   );
 };
 
