@@ -38,7 +38,7 @@ const Navbar = () => {
               </div>
             </li>
             <li className="nav-item">
-              <div className="nav-link showModal" data-toggle="modal" data-target="#createModal">
+              <div className="nav-link pointer" data-toggle="modal" data-target="#createModal">
                 <Add />
                 Create New
               </div>

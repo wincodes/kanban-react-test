@@ -1,30 +1,10 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useCallback } from "react";
 import { DndProvider } from "react-dnd";
 import firebase from "../../../firebase";
 import Task from "./Task";
 import HTML5Backend from "react-dnd-html5-backend";
 
-const getTasks = () => {
-  const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    firebase
-      .firestore()
-      .collection("tasks")
-      .onSnapshot((snapshot) => {
-        const newTasks = snapshot.docs.map((el) => ({
-          id: el.id,
-          ...el.data(),
-        }));
-        setTasks(newTasks);
-      });
-  }, []);
-
-  return tasks;
-};
-
-const Stages = () => {
-  const tasks = getTasks();
+const Stages = ({ tasks }) => {
   const requested = tasks.filter((task) => {
     return task.status === "requested";
   });

@@ -88,6 +88,7 @@ const CreateModal = () => {
                 <option value="seoarticle">Seo Article</option>
                 <option value="longform">Longform</option>
                 <option value="blogpost">Blog Post</option>
+                <option value="micrographic">Micrographic</option>
               </select>
             </div>
             <div className="form-group">
