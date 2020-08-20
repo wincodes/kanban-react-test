@@ -28,7 +28,7 @@ const Navbar = () => {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
               <div className="d-flex bg-light user-details justify-content-between">
-                <div> Global Electronic Services </div>
+                <div className="p-1"> Global Electronic Services </div>
                 <div>
                   <span>
                     {" "}

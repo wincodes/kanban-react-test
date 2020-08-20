@@ -1,8 +1,8 @@
-import React, { useCallback, useRef } from "react";
+import React, { useRef } from "react";
 import Category from "@material-ui/icons/Category";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 
-import { useDrag, useDrop } from "react-dnd";
+import { useDrag } from "react-dnd";
 
 const MainCard = ({ id, title, description, tag, duedate }) => {
   const ref = useRef(null);

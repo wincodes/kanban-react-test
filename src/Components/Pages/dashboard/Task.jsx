@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import MainCard from "../cards/maincard";
-import { useDrag, useDrop } from "react-dnd";
+import { useDrop } from "react-dnd";
 
 const Task = ({ data, name, targetStatus, changeTaskStatus }) => {
   const ref = useRef(null);
@@ -13,10 +13,13 @@ const Task = ({ data, name, targetStatus, changeTaskStatus }) => {
   drop(ref);
 
   return (
-    <div className="project-column position-relative d-flex flex-auto flex-column overflow-hidden pl-2 pt-2" ref={ref}>
+    <div
+      className="project-column position-relative d-flex flex-auto flex-column overflow-hidden pl-2 pt-2"
+      ref={ref}
+    >
       <div className="p-2">
         <div className="pb-4">
-          <span className="edit total-task pt-1 pb-1 pl-2 pr-2">
+          <span className={`${targetStatus} total-task pt-1 pb-1 pl-2 pr-2`}>
             {data.length}
           </span>{" "}
           {name}

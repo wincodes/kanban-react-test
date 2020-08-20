@@ -99,12 +99,16 @@
   background-color: #fbedce;
 }
 
-.p-approval {
+.pendingApproval {
   background-color: #d1e4f9;
 }
 
-.p-implementation {
+.pendingImplementation {
   background-color: #fedfd0;
+}
+
+.done{
+    background-color: rgb(50, 236, 50);
 }
 
 .stage {
