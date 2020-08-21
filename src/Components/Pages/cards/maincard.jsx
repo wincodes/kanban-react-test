@@ -1,13 +1,22 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Category from "@material-ui/icons/Category";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 
 import { useDrag } from "react-dnd";
 
-const MainCard = ({ id, title, description, tag, duedate }) => {
+const MainCard = ({
+  id,
+  title,
+  description,
+  tag,
+  duedate,
+  isClicked,
+  selected,
+}) => {
+  const [bg, setBg] = useState("");
   const ref = useRef(null);
-  const [{ isDragging, }, drag] = useDrag({
-    item: { type: "card", id },
+  const [{ isDragging }, drag] = useDrag({
+    item: { type: "card", id, selectedIds: selected },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
@@ -15,8 +24,19 @@ const MainCard = ({ id, title, description, tag, duedate }) => {
   const opacity = isDragging ? 0 : 1;
   drag(ref);
 
+  const doClick = (cmdKey, shiftKey, ctrlKey, id) => {
+    isClicked(cmdKey, shiftKey, ctrlKey, id);
+
+    if (selected.includes(id)) setBg("border-warning");
+  };
+
   return (
-    <div className="card mb-3" ref={ref} style={{ opacity }}>
+    <div
+      className={`card mb-3 ${selected.includes(id) ? "border-warning" : ""}`}
+      ref={ref}
+      style={{ opacity }}
+      onClick={(e) => doClick(e.metaKey, e.shiftKey, e.ctrlKey, id)}
+    >
       <div className="card-body">
         <h6 className="card-title">{title}</h6>
         <p className="card-text">{description}</p>

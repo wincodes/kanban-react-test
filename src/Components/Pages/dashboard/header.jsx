@@ -165,8 +165,9 @@ const Navbar = ({ filters, setNewFilters, doSearch, doReset }) => {
                 <div className="">
                   <input
                     type="text"
-                    className="search-bar"
+                    className="form-control"
                     placeholder="enter text"
+                    autofocus="true"
                     value={text}
                     onChange={(e) => setText(e.currentTarget.value)}
                   />

@@ -156,11 +156,6 @@ hr {
     cursor: pointer;
 }
 
-.search-bar {
-    border: unset !important;
-    width: 100px !important;
-}
-
 .no-filter {
     background: #B2B6B2;
     border-radius: 50%;

@@ -1,16 +1,35 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import MainCard from "../cards/maincard";
 import { useDrop } from "react-dnd";
 
 const Task = ({ data, name, targetStatus, changeTaskStatus }) => {
+  const [selected, setSelected] = useState([]);
   const ref = useRef(null);
   const [, drop] = useDrop({
     accept: "card",
     drop(id, status) {
-      changeTaskStatus(id, status, targetStatus);
+      const { selectedIds } = id;
+      if (selectedIds.length === 0) {
+        changeTaskStatus(id, status, targetStatus);
+      } else {
+        selectedIds.forEach((el) => {
+          const id = { id: el };
+          changeTaskStatus(id, status, targetStatus);
+        });
+      }
     },
   });
   drop(ref);
+
+  const selectCard = (cmdKey, shiftKey, ctrlKey, id) => {
+    if (cmdKey || shiftKey || ctrlKey) {
+      const existingSelection = selected;
+      if (!existingSelection.includes(id)) existingSelection.push(id);
+      setSelected(existingSelection);
+    } else {
+      setSelected([]);
+    }
+  };
 
   return (
     <div
@@ -27,6 +46,8 @@ const Task = ({ data, name, targetStatus, changeTaskStatus }) => {
         <div className="pt-2">
           {data.map((task) => (
             <MainCard
+              isClicked={selectCard}
+              selected={selected}
               key={task.id}
               id={task.id}
               title={task.title}
