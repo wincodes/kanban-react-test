@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Category from "@material-ui/icons/Category";
 import CalendarToday from "@material-ui/icons/CalendarToday";
+import moment from "moment";
 
 import { useDrag } from "react-dnd";
 
@@ -30,6 +31,10 @@ const MainCard = ({
     if (selected.includes(id)) setBg("border-warning");
   };
 
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
   return (
     <div
       className={`card mb-3 ${selected.includes(id) ? "border-warning" : ""}`}
@@ -45,7 +50,7 @@ const MainCard = ({
           <span>
             <Category className="smallx" />
           </span>{" "}
-          {tag}
+          <span className="pl-2 pt-1">{capitalize(tag)}</span>
         </div>
         <hr />
         <div className="due-date">
@@ -53,7 +58,7 @@ const MainCard = ({
           <span>
             <CalendarToday className="smallx" />
           </span>{" "}
-          {duedate}
+          <span className="pl-2 pt-1">{moment(duedate).format("MM/DD/YYYY")}</span>
         </div>
       </div>
     </div>
